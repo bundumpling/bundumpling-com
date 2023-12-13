@@ -90,6 +90,11 @@
 		justify-content: center;
 	}
 
+	header img {
+		max-width: 100%;
+		height: auto;
+	}
+
 	.socials {
 		margin-block-start: 3rem;
 		display: grid;
@@ -104,6 +109,7 @@
 		list-style: none;
 		font-size: 2rem;
 		font-weight: 700;
+		padding: 0;
 	}
 
 	.socials > ul > li {
