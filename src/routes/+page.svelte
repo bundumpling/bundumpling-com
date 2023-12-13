@@ -13,10 +13,13 @@
 	<meta property="og:url" content="https://www.bundumpling.com" />
 	<meta property="og:type" content="article" />
 	<meta property="og:locale" content="en_US" />
-	<meta property="og:image" content="https://www.bundumpling.com/android-chrome-192x192.png" />
-	<meta property="og:image:width" content="192" />
-	<meta property="og:image:height" content="192" />
-	<meta property="og:image:alt" content="An illustrated bun smiling." />
+	<meta property="og:image" content="https://www.bundumpling.com/cover.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta
+		property="og:image:alt"
+		content="Illustration of a smiling pregnant bun holding chopsticks next to a big scallion."
+	/>
 </svelte:head>
 
 <header>
