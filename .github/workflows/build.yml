@@ -13,10 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: matootie/github-docker@v3.1.0
-        with:
-          accessToken: ${{ github.token }}
-          containerRegistry: true
+        uses: docker/build-push-action@v5.1.0
       - name: Deploy on CapRover
         uses: caprover/deploy-from-github@v1.1.2
         with:
