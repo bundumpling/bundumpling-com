@@ -17,7 +17,7 @@ jobs:
       - name: Deploy on CapRover
         uses: caprover/deploy-from-github@v1.1.2
         with:
-          server: https://bundumpling.com
+          server: https://hatfido.bundumpling.com
           app: 'bundumpling-com'
           token: '${{ secrets.APP_TOKEN }}'
           image: 'ghcr.io/bundumpling/bundumpling-com:latest'
