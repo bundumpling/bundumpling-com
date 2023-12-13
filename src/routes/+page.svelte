@@ -1,5 +1,22 @@
 <svelte:head>
 	<title>bundumpling</title>
+	<meta
+		property="description"
+		content="Dark Souls speedrunner bundumpling is part of the Souls Speedrunning Community."
+	/>
+	<meta property="og:title" content="bundumpling" />
+	<meta
+		property="og:description"
+		content="Dark Souls speedrunner bundumpling is part of the Souls Speedrunning Community."
+	/>
+	<meta property="og:site_name" content="bundumpling" />
+	<meta property="og:url" content="https://www.bundumpling.com" />
+	<meta property="og:type" content="article" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:image" content="https://www.bundumpling.com/android-chrome-192x192.png" />
+	<meta property="og:image:width" content="192" />
+	<meta property="og:image:height" content="192" />
+	<meta property="og:image:alt" content="An illustrated bun smiling." />
 </svelte:head>
 
 <header>
