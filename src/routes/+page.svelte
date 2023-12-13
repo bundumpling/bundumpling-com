@@ -70,6 +70,14 @@
 			</li>
 		</ul>
 	</section>
+
+	<section class="souls-speedruns">
+		<p>
+			Check out the <a href="https://soulsspeedruns.com/">Souls Speedruns</a> site to discover more
+			about speedrunning <strong>Demon's Souls</strong>, the <strong>Dark Souls</strong> series,
+			<strong>Bloodborne</strong>, and <strong>Elden Ring</strong>.
+		</p>
+	</section>
 </article>
 
 <style>
@@ -148,5 +156,25 @@
 
 	li[data-site='bluesky'] {
 		background-color: #c4fcf0;
+	}
+
+	.souls-speedruns {
+		max-width: 80ch;
+		margin-inline: auto;
+		margin-block-start: 2rem;
+		padding-inline: 2rem;
+		display: grid;
+		place-items: center;
+		border: 2px solid #54433a;
+		border-radius: 6px;
+		font-size: 1.5rem;
+		background-color: #ffe9d0;
+		box-shadow:
+			2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+			6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+			12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+			22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+			41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+			100px 100px 80px rgba(0, 0, 0, 0.07);
 	}
 </style>
