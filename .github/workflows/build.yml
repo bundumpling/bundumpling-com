@@ -23,7 +23,7 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: bundumpling/bundumpling-com:latest
+          tags: ghcr.io/bundumpling/bundumpling-com:latest
       - name: Deploy on CapRover
         uses: caprover/deploy-from-github@v1.1.2
         with:
