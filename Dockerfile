@@ -1,4 +1,4 @@
-FROM node:21-alpine AS sk-build
+FROM node:19.7-alpine AS sk-build
 WORKDIR /usr/src/app
 
 ARG TZ=America/New_York
@@ -7,9 +7,9 @@ COPY . /usr/src/app
 RUN apk --no-cache add curl tzdata
 RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN npm install
-RUN npm run build:node
+RUN npm run build
 
-FROM node:21-alpine
+FROM node:19.7-alpine
 WORKDIR /usr/src/app
 
 ARG TZ=America/New_York
@@ -18,9 +18,8 @@ RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 COPY --from=sk-build /usr/src/app/package.json /usr/src/app/package.json
 COPY --from=sk-build /usr/src/app/package-lock.json /usr/src/app/package-lock.json
-COPY --from=sk-build /usr/src/app/migrations /usr/src/app/migrations
 
-COPY --from=sk-build /usr/src/app/build-node /usr/src/app/build-node
+COPY --from=sk-build /usr/src/app/build /usr/src/app/build
 
 EXPOSE 3000
-CMD ["npm", "run", "start:node"]
+CMD ["node", "build/index.js"]
