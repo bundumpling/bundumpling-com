@@ -12,29 +12,20 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v5
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
         with:
-          # list of Docker images to use as base name for tags
-          images: |
-            ghcr.io/bundumpling/bundumpling-com
-          # generate Docker tags based on the following events/attributes
-          tags: |
-            type=schedule
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
       - name: Publish Docker Image
         uses: docker/build-push-action@v5.1.0
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ github.ref }}
+            ghcr.io/${{ github.repository }}:latest
       - name: Deploy on CapRover
         uses: caprover/deploy-from-github@v1.1.2
         with:
